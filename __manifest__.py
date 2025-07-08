@@ -12,7 +12,12 @@
     'data': [
         'views/marge_view.xml',
     ],
-    'images': ['static/description/screenshot.png'],
+    'images': [
+        
+        'static/description/screenshot1.png',
+        'static/description/screenshot2.png',
+    
+    ],
     'installable': True,
     'application': False,
     'description': """

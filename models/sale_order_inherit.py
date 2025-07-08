@@ -70,9 +70,3 @@ class SaleOrderInherit(models.Model):
                         line._compute_margin()
                         line._onchange_marge_product()
 
-    # def write(self, vals):
-    #     res = super(SaleOrderInherit, self).write(vals)
-    #     for order in self:
-    #         if order.partner_id and order.partner_id.numero_fournisseur:
-    #             order.partner_number = order.partner_id.numero_fournisseur
-    #     return res
