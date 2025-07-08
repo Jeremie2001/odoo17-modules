@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <record model="ir.ui.view" id="sale_margin_sale_order_line_form">
+        <field name="name">sale.order.line.tree.margin.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
+               <field name="price_subtotal" column_invisible="True"/>
+               <field name="purchase_price" optional="hide"/>
+
+               <field name="margin_produit_copy" optional="hide"/>
+
+               <field name="marge_percent_copy" optional="hide" invisible="price_subtotal == 0" widget="percentage" />
+
+               <field name="marge_reduit" optional="hide"/>
+               <field name="marge_reduit_percent" optional="hide" invisible="price_subtotal == 0" widget="percentage" />
+
+               <field name="margin_produit" column_invisible="1"/>
+               <field name="margin_pourcent" invisible="1" widget="percentage"/>
+           </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='qty_delivered']" position="after">
+                <field name="qty_delivered_percent" optional="show" widget="percentage" column_invisible="parent.state != 'sale'"/>
+            </xpath>
+
+             <xpath expr="//field[@name='payment_term_id']" position="after">
+                 <field name="projet" widget="many2one" />
+                <label for="marge_global_percent" />
+                <div class="row">
+                    <div class="oe_inline" style="width: 100px !important;">
+                        <field name="marge_global_percent" readonly="is_marge_global == 0" />
+                    </div>
+                    <field name="is_marge_global" class="oe_inline" widget="boolean_toggle" options='{"no_label": true}'/>
+                </div>
+                <field name="marge_global" widget="monetary"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="sale_order_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="priority">1000</field>
+        <field name="inherit_id" ref="sale.sale_order_tree"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="partner_number" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sales_order_filter_inherit_in" model="ir.ui.view">
+        <field name="name">sale.order.list.search</field>
+        <field name="model">sale.order</field>
+        <field name="priority" eval="15"/>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                 <field name="partner_number" string="N° Client"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_sales_order_filter_inherit_project" model="ir.ui.view">
+        <field name="name">sale.order.list.select.inherit.project</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <!-- Ajout du champ projet après le champ client -->
+            <field name="partner_id" position="after">
+                <field name="projet" string="Projet"/>
+            </field>
+        </field>
+    </record>
+   
+
+</odoo>
