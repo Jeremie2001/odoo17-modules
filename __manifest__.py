@@ -3,8 +3,8 @@
     'summary': 'Track product margins on sales orders to analyze profitability',
     'version': '17.0.1.0.0',
     'category': 'Sales/Sales',
-    'author': 'Jeremie',
-    'website': 'https://ton-site-ou-github.com',
+    'author': 'Jeremie Ndjoli - CRAKITECH',
+    'website': 'https://github.com/Jeremie2001',
     'license': 'LGPL-3',
     'depends': [
         'sale_management',
@@ -13,13 +13,13 @@
         'views/marge_view.xml',
     ],
     'images': [
-        
-        'static/description/screenshot1.png',
+        'static/description/icon.png',  # OBLIGATOIRE - icône 128x128px
         'static/description/screenshot2.png',
-    
     ],
     'installable': True,
     'application': False,
+    'price': 0.0,  # Ajout pour module gratuit
+    'currency': 'EUR',  # Ajout pour module gratuit
     'description': """
 Product Margin on Sales Orders
 ==============================
