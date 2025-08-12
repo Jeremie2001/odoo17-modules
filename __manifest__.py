@@ -13,13 +13,13 @@
         'views/marge_view.xml',
     ],
     'images': [
-        'static/description/icon.png',  # OBLIGATOIRE - icône 128x128px
+        'static/description/icon.png',  
         'static/description/screenshot2.png',
     ],
     'installable': True,
     'application': False,
-    'price': 0.0,  # Ajout pour module gratuit
-    'currency': 'EUR',  # Ajout pour module gratuit
+    'price': 49.0,  
+    'currency': 'EUR', 
     'description': """
 Product Margin on Sales Orders
 ==============================
