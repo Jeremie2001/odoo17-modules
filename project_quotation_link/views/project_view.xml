@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<odoo>
+  <data>
+
+
+    <record id="project_view_kanban_inherit" model="ir.ui.view">
+    <field name="name">project.project.kanban.inherit</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project_kanban"/>
+    <field name="arch" type="xml">
+        
+        <xpath expr="//t[@t-name='kanban-box']//div[hasclass('o_primary')]" position="after">
+    <div t-if="record.sale_order_count.value > 0" class="text-muted small mt-1">
+        <i class="fa fa-file-text-o mr-2"/> 
+        <field name="sale_order_count" style="margin-left:7px !important;"/> devis associés
+    </div>
+
+    <div t-if="record.entreprise.value" class="text-muted small mt-1">
+                <i class="fa fa-building-o mr-2"/>
+                <field name="entreprise" widget="res_partner_many2one"  style="margin-left:7px !important;"/>
+            </div>
+    </xpath>
+        
+        
+    </field>
+</record>
+
+
+
+ <record id="project_project_view_form_inherit" model="ir.ui.view">
+    <field name="name">project.project.view.form.inherit</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">
+
+              <div class=" mt-2">
+               <label for="description_projet" string="Description du projet" style="margin-right:15px !important;"/>
+
+                  <span class="oe_edit_only o_row">
+                
+                  <field name="description_projet" class="mt-1 fs-6" placeholder="description du projet"/>
+
+
+                  </span>
+                 
+              </div>
+              
+             <div class=" mt-2">
+                  <label for="entreprise" string="Entreprise" style="margin-right:15px !important;"/>
+
+                  <span class="oe_edit_only o_row">
+                
+                  <field name="entreprise" class="mt-1 fs-6" placeholder="choisir l'entreprise"/>
+
+
+                  </span>
+                 
+              </div>
+
+
+
+              <div class="mt-2">
+              <label for="responsable" string="Responsable" style="margin-right:15px !important;"/>
+              <span class="oe_edit_only o_row">
+                  
+                  <field name="responsable" class="mt-1 fs-6" placeholder="choisir le responsable"/>
+                  
+
+                   </span>
+              </div>
+        </xpath>
+    </field>
+</record>
+
+
+
+
+ 
+  </data>
+</odoo>

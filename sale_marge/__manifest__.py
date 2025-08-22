@@ -16,6 +16,7 @@
         'static/description/icon.png',  
         'static/description/screenshot2.png',
     ],
+    
     'installable': True,
     'application': False,
     'price': 49.0,  
