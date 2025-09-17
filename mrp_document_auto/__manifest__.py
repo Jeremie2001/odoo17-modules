@@ -30,7 +30,7 @@
     'website': "https://www.linkedin.com/in/jeremie-ndjoli-39a550255/",
 
     'category': 'Manufacturing',
-    'version': '1.0',
+    'version': '17.0.1.0.0',
 
     'depends': ['mrp', 'base'],
 
