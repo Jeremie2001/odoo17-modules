@@ -49,11 +49,12 @@ class MrpBom(models.Model):
                     
                     if not existing_attachment:
                         try:
-                            # Copier l'attachement
-                            new_attachment = att.copy({
+                            # Copier l'attachement avec copy_data pour Odoo 18
+                            copy_values = att.copy_data({
                                 'res_model': 'product.template',
                                 'res_id': product_template.id,
-                            })
+                            })[0]
+                            new_attachment = Attachment.create(copy_values)
 
                             # Créer ou mettre à jour le document produit associé
                             product_doc = ProductDocument.search([
@@ -61,12 +62,12 @@ class MrpBom(models.Model):
                             ], limit=1)
                             
                             if product_doc:
-                                product_doc.write({'attached_on': 'inside'})
+                                product_doc.write({'attached_on_sale': 'quotation'})
                             else:
                                 # Si pas de product.document, en créer un
                                 ProductDocument.create({
                                     'ir_attachment_id': new_attachment.id,
-                                    'attached_on': 'inside',
+                                    'attached_on_sale': 'quotation',
                                 })
                                 
                             _logger.info(f"Document copié: {att.name} vers {product_template.name}")
@@ -77,15 +78,29 @@ class MrpBom(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         boms = super().create(vals_list)
-        # Différer la synchronisation pour éviter les problèmes de commit
-        boms.with_delay()._copy_attachments_to_product_template() if hasattr(boms, 'with_delay') else boms._copy_attachments_to_product_template()
+        # Utiliser _delay_sync au lieu de with_delay pour éviter les problèmes
+        self.env.ref('queue_job.channel_root', raise_if_not_found=False)
+        if hasattr(self.env, 'queue_job') or hasattr(boms, 'with_delay'):
+            try:
+                boms.with_delay()._copy_attachments_to_product_template()
+            except:
+                # Fallback en mode synchrone si queue_job n'est pas disponible
+                boms._copy_attachments_to_product_template()
+        else:
+            boms._copy_attachments_to_product_template()
         return boms
 
     def write(self, vals):
         res = super().write(vals)
         # Seulement si les lignes de BoM ont changé
         if 'bom_line_ids' in vals:
-            self.with_delay()._copy_attachments_to_product_template() if hasattr(self, 'with_delay') else self._copy_attachments_to_product_template()
+            if hasattr(self, 'with_delay'):
+                try:
+                    self.with_delay()._copy_attachments_to_product_template()
+                except:
+                    self._copy_attachments_to_product_template()
+            else:
+                self._copy_attachments_to_product_template()
         return res
 
 
