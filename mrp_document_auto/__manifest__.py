@@ -27,7 +27,9 @@
 """,
 
     'author': "Jeremie Ndjoli",
-    'website': "https://www.linkedin.com/in/jeremie-ndjoli-39a550255/",
+    # 'website': "https://www.linkedin.com/in/jeremie-ndjoli-39a550255/",   
+
+    'website': "https://github.com/Jeremie2001",  
 
     'category': 'Manufacturing',
     'version': '17.0.1.0.0',
