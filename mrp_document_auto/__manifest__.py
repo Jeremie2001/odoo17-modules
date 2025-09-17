@@ -43,9 +43,20 @@
         'demo/demo.xml',
     ],
 
+    
+
+
     'images': [
         'static/description/icon.png',
+        'static/description/add_manufacturing.png',
+        'static/description/component_doc.png',
+        'static/description/component_with_doc.png',
+        'static/description/finished_prod_doc.png',
+        'static/description/finished_prod_with_doc.png',
+        'static/description/finished_product_without_doc.png',
+
     ],
+
 
     'installable': True,
     'application': False,
