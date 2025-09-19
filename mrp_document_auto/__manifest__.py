@@ -54,6 +54,8 @@
         'static/description/finished_prod_doc.png',
         'static/description/finished_prod_with_doc.png',
         'static/description/finished_product_without_doc.png',
+        'static/description/obsolete_component.png',
+
 
     ],
 
