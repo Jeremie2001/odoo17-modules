@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MRP - Auto Copy Documents</title>
 </head>
 <body>
 
+    <!-- Titre -->
     <section class="oe_container">
         <div class="oe_row oe_spaced">
           <h2 class="oe_slogan">📂 MRP - Auto Copy Documents</h2>
@@ -17,33 +18,36 @@
             Plus besoin de gérer les documents manuellement !
           </p>
         </div>
-      </section>
+    </section>
       
-      <section class="oe_container">
+    <!-- Fonctionnalités -->
+    <section class="oe_container">
         <div class="oe_row oe_spaced">
-          <h2>✨ Fonctionnalités</h2>
+          <h2>Fonctionnalités</h2>
           <ul>
             <li>Copie automatique des documents des composants vers le produit final</li>
             <li>Évite les doublons (contrôle par nom + checksum)</li>
             <li>Mise à jour automatique lorsque les composants changent</li>
-            <li>Marquage en <b>[LEGACY]</b> des documents supprimés</li>
+            <li>Marquage en <b>[OBSOLETE]</b> des documents supprimés</li>
             <li>Synchronisation bidirectionnelle avec les produits</li>
           </ul>
         </div>
-      </section>
+    </section>
       
-      <section class="oe_container">
+    <!-- Cas d’utilisation -->
+    <section class="oe_container">
         <div class="oe_row oe_spaced">
-          <h2>🎯 Cas d’utilisation</h2>
+          <h2>Cas d’utilisation</h2>
           <ul>
             <li>Plans techniques (PDF, images, DXF)</li>
             <li>Fiches techniques et certificats</li>
             <li>Documentation de production centralisée</li>
           </ul>
         </div>
-      </section>
+    </section>
       
-      <section class="oe_container">
+    <!-- Exemple illustré -->
+    <section class="oe_container">
         <h2>📸 Exemple d’utilisation</h2>
         <p><b>1. Avant la copie</b> : le composant possède des documents, mais le produit fini n’a rien.</p>
         <div class="oe_demo oe_screenshot">
@@ -53,11 +57,9 @@
           <img src="finished_product_without_doc.png" alt="Produit fini sans documents"/>
         </div>
 
-
-        <p><b>2. </b> : Lors de la creation de la nomenclature on selectionne le produit fini au niveau du champ produit et ensuite on selectionne le composant pour le prodduit fini.</p>
-
+        <p><b>2.</b> Création de la nomenclature : sélectionnez le produit fini et ses composants.</p>
         <div class="oe_demo oe_screenshot">
-          <img src="add_manufacturing.png" alt="Produit fini avec documents copiés"/>
+          <img src="add_manufacturing.png" alt="Création de BoM"/>
         </div>
       
         <p><b>3. Après la copie</b> : le produit fini récupère automatiquement les documents du composant.</p>
@@ -67,12 +69,12 @@
       
         <p><b>4. Suppression</b> : un document supprimé du composant est marqué <b>[OBSOLETE]</b> dans le produit fini.</p>
         <div class="oe_demo oe_screenshot">
-          <img src="obsolete_component.png" alt="Document marqué LEGACY"/>
+          <img src="obsolete_component.png" alt="Document marqué OBSOLETE"/>
         </div>
-      </section>
+    </section>
       
-      
-      <section class="oe_container">
+    <!-- Avantages -->
+    <section class="oe_container">
         <div class="oe_row oe_spaced">
           <h2>✅ Avantages</h2>
           <ul>
@@ -81,13 +83,40 @@
             <li>Transparence et traçabilité complète</li>
           </ul>
         </div>
-      </section>
+    </section>
 
+    <!-- Compatibilité -->
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+          <h2>⚙️ Compatibilité</h2>
+          <ul>
+            <li>Odoo 17 ✅</li>
+            <li>Odoo 18 ✅</li>
+          </ul>
+        </div>
+    </section>
 
+    <!-- Installation -->
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+          <h2>Installation & Utilisation</h2>
+          <p>
+            1. Installez le module depuis <b>Apps</b>. <br/>
+            2. Lors de la création ou modification d’une <b>Nomenclature (BoM)</b>, les documents liés aux composants sont copiés automatiquement vers le produit fini. <br/>
+            3. Si un document est supprimé d’un composant, il est automatiquement marqué <b>[OBSOLETE]</b> dans le produit fini.
+          </p>
+        </div>
+    </section>
 
-      
-      
-      
+    <!-- Support -->
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+          <h2>Support</h2>
+          <p>
+            Pour toute question ou personnalisation, merci d’utiliser la messagerie de l’Odoo Apps Store.  
+          </p>
+        </div>
+    </section>
 
 </body>
 </html>
