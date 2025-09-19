@@ -27,7 +27,7 @@
 """,
 
     'author': "Jeremie Ndjoli",
-    'website': "https://www.linkedin.com/in/jeremie-ndjoli-39a550255/",
+    'website': "https://github.com/Jeremie2001/odoo17-modules",
 
     'category': 'Manufacturing',
     'version': '18.0.1.0.0',  
