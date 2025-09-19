@@ -9,7 +9,7 @@
 - Automatically copies all documents and attachments related to components (products or variants) to the final product associated with the bill of materials (BoM).
 - Avoids duplicates by checking the file name and checksum.
 - Updates documents in real time when components change.
-- Marks deleted documents as `[LEGACY]` to preserve history.
+- Marks deleted documents as `[OBSOLETE]` to preserve history.
 - Two-way synchronization between product documents and bill of materials documents.
 
 **Use cases**
