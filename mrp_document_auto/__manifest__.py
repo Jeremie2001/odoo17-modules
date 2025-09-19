@@ -30,7 +30,7 @@
     'website': "https://github.com/Jeremie2001/odoo17-modules",
 
     'category': 'Manufacturing',
-    'version': '18.0.1.0.0',  
+    'version': '17.0.1.0.0',  
 
     'depends': ['mrp', 'base'],
 
