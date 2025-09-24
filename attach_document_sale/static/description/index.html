@@ -4,6 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto-Attach Product Documents to Sales Emails</title>
+    <style>
+        /* CSS intégré pour s'assurer du bon affichage */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .oe_container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .oe_container.oe_dark {
+            background-color: #f8f9fa;
+        }
+
+        .oe_row {
+            display: block;
+            width: 100%;
+        }
+
+        .oe_spaced {
+            margin-bottom: 30px;
+        }
+
+        .oe_slogan {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2.oe_slogan {
+            font-size: 2.5em;
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        h3.oe_slogan {
+            font-size: 1.5em;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        /* Section Avant/Après - Images empilées verticalement */
+        .before-after-section {
+            text-align: center;
+        }
+
+        .comparison-item {
+            margin: 40px 0;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .comparison-item h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .comparison-item.before {
+            border-left: 5px solid #e74c3c;
+        }
+
+        .comparison-item.after {
+            border-left: 5px solid #27ae60;
+        }
+
+        .oe_screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Section fonctionnement */
+        .step-item {
+            margin: 40px 0;
+            padding: 25px;
+            background: #fff;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .step-item h4 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        /* Bénéfices */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-list li {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+            font-size: 1.1em;
+        }
+
+        .benefits-list li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .oe_container {
+                padding: 20px 10px;
+            }
+            
+            h2.oe_slogan {
+                font-size: 2em;
+            }
+            
+            h3.oe_slogan {
+                font-size: 1.3em;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -11,62 +146,86 @@
         <div class="oe_row oe_spaced">
           <h2 class="oe_slogan">Auto-Attach Product Documents to Sales Emails</h2>
           <h3 class="oe_slogan">Never forget to send product files again!</h3>
-          <p>
+          <p style="text-align: center; font-size: 1.1em; max-width: 800px; margin: 0 auto;">
             This module automatically attaches all product-related documents
             (catalogs, specifications, images, PDFs, etc.) when you send a quotation
             or sales order by email. Simple, fast, and error-free.
           </p>
         </div>
-      </section>
+    </section>
       
-      <!-- Avant / Après -->
-      <section class="oe_container oe_dark">
+    <!-- Avant / Après - Images empilées verticalement -->
+    <section class="oe_container oe_dark">
         <div class="oe_row oe_spaced">
           <h2 class="oe_slogan">Before vs After</h2>
-          <div class="oe_span6">
-            <h4>❌ Before (without module)</h4>
-            <p>The email composer only includes the quotation PDF. Product files are missing.</p>
-            <img src="screenshot_before.png" class="oe_screenshot" alt="Before: Email composer without product files"/>
-          </div>
-          <div class="oe_span6">
-            <h4>✅ After (with module)</h4>
-            <p>The email composer automatically includes all product-related documents.</p>
-            <img src="screenshot_after.png" class="oe_screenshot" alt="After: Email composer with product files attached"/>
+          <div class="before-after-section">
+            
+            <div class="comparison-item before">
+                <h4>❌ Before (without module)</h4>
+                <p>The email composer only includes the quotation PDF. Product files are missing.</p>
+                <img src="screenshot_before.png" class="oe_screenshot" alt="Before: Email composer without product files"/>
+            </div>
+            
+            <div class="comparison-item after">
+                <h4>✅ After (with module)</h4>
+                <p>The email composer automatically includes all product-related documents.</p>
+                <img src="screenshot_after.png" class="oe_screenshot" alt="After: Email composer with product files attached"/>
+            </div>
+            
           </div>
         </div>
-      </section>
+    </section>
       
-      <!-- Fonctionnement -->
-      <section class="oe_container">
+    <!-- Fonctionnement -->
+    <section class="oe_container">
         <div class="oe_row oe_spaced">
           <h2 class="oe_slogan">How It Works</h2>
-          <div class="oe_span12">
-            <h4>1. Attach documents to your products</h4>
-            <p>Each product can have technical sheets, catalogs, or images stored as attachments.</p>
-            <img src="" class="oe_screenshot" alt="Product with attached documents"/>
-      
-            <h4>2. Create a quotation with these products</h4>
-            <p>When you send the quotation by email, the module automatically retrieves all product documents and adds them to the email.</p>
-            <img src="" class="oe_screenshot" alt="Quotation with products"/>
+          
+          <div class="step-item">
+            <h4>📎 Step 1: Attach documents to your products</h4>
+            <p>Each product can have technical sheets, catalogs, or images stored as attachments in the product form.</p>
+            <img src="screenshot_product_attachments.png" class="oe_screenshot" alt="Product with attached documents"/>
           </div>
+
+          <div class="step-item">
+            <h4>📧 Step 2: Create and send quotations normally</h4>
+            <p>When you send the quotation by email, the module automatically retrieves all product documents and adds them to the email.</p>
+            <img src="screenshot_quotation.png" class="oe_screenshot" alt="Quotation with products"/>
+          </div>
+
+          <div class="step-item">
+            <h4>🎯 Step 3: Customer receives complete documentation</h4>
+            <p>Your customer gets the quotation PDF plus all relevant product documents automatically!</p>
+          </div>
+          
         </div>
-      </section>
+    </section>
       
-      <!-- Bénéfices -->
-      <section class="oe_container oe_dark">
+    <!-- Bénéfices -->
+    <section class="oe_container oe_dark">
         <div class="oe_row oe_spaced">
-          <h2 class="oe_slogan">Benefits</h2>
-          <ul>
+          <h2 class="oe_slogan">Key Benefits</h2>
+          <ul class="benefits-list">
             <li>Automatic product document attachment</li>
             <li>No more forgotten files</li>
             <li>Save time for your sales team</li>
             <li>Professional and complete emails for customers</li>
+            <li>Works with existing product attachments</li>
+            <li>Zero configuration required</li>
           </ul>
         </div>
-      </section>
-      
-    
-      
+    </section>
+
+    <!-- Installation -->
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+          <h2 class="oe_slogan">Installation</h2>
+          <p style="text-align: center; font-size: 1.1em;">
+            Simply install the module and it works immediately with your existing product attachments. 
+            No configuration needed!
+          </p>
+        </div>
+    </section>
     
 </body>
 </html>
