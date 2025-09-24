@@ -27,7 +27,7 @@
     'depends': ['sale', 'mail'],  
     'images': [
         
-        'static/description/banner.png',
+        'static/description/banner.jpg',
         'static/description/screenshot_before.png',
         'static/description/screenshot_after.png',
     ],
