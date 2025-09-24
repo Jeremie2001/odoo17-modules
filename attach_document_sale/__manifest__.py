@@ -26,7 +26,7 @@
     'license': 'LGPL-3',
     'depends': ['sale', 'mail'],  
     'images': [
-        'static/description/icon.png',
+        
         'static/description/banner.png',
         'static/description/screenshot_before.png',
         'static/description/screenshot_after.png',
