@@ -78,11 +78,19 @@
 
         .oe_screenshot {
             max-width: 100%;
+            width: 100%;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin: 20px 0;
+            margin: 20px auto;
+            display: block;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Style spécifique pour les grandes captures d'écran */
+        .oe_screenshot.large {
+            max-width: 900px;
+            width: auto;
         }
 
         /* Section fonctionnement */
@@ -137,6 +145,14 @@
             h3.oe_slogan {
                 font-size: 1.3em;
             }
+
+            .oe_screenshot.large {
+                max-width: 100%;
+            }
+
+            .comparison-item {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -163,13 +179,13 @@
             <div class="comparison-item before">
                 <h4>❌ Before (without module)</h4>
                 <p>The email composer only includes the quotation PDF. Product files are missing.</p>
-                <img src="screenshot_before.png" class="oe_screenshot" alt="Before: Email composer without product files"/>
+                <img src="screenshot_before.png" class="oe_screenshot large" alt="Before: Email composer without product files"/>
             </div>
             
             <div class="comparison-item after">
                 <h4>✅ After (with module)</h4>
                 <p>The email composer automatically includes all product-related documents.</p>
-                <img src="screenshot_after.png" class="oe_screenshot" alt="After: Email composer with product files attached"/>
+                <img src="screenshot_after.png" class="oe_screenshot large" alt="After: Email composer with product files attached"/>
             </div>
             
           </div>
