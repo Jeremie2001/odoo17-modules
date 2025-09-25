@@ -12,94 +12,168 @@
         .solution-box { background: #d1edff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; }
         .workflow-step { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin: 10px 0; }
         .benefit-item { display: flex; align-items: center; margin: 10px 0; }
-        .benefit-icon { background: #28a745; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; }
+        .benefit-icon {  color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 5px; font-weight: bold; }
         .cta-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin: 30px 0; }
-        .cta-button { background: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
         .step-number { background: #007bff; color: white; width: 35px; height: 35px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; }
         ul li { margin: 8px 0; }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
         h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
         h3 { color: #34495e; margin-top: 30px; }
+        .highlight-box { background: #e8f5e8; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; }
+        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .industry-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #17a2b8; }
+        img { max-width: 100%; height: auto; margin: 10px 0; border: 2px solid #e9ecef; border-radius: 8px; display: block; }
     </style>
 </head>
 <body>
 
-  <!-- Intro -->
+  <!-- Intro with Problem/Solution -->
   <section class="oe_container">
     <div class="oe_row oe_spaced">
-      <h2 class="oe_slogan">Auto-Attach Product Documents to Sales Emails</h2>
-      <h3 class="oe_slogan">Save time and never forget to send product documents again!</h3>
-      <p>
-          This module automatically attaches product-related documents 
-          (catalogs, specifications, images, PDFs, etc.) when sending quotation 
-          or sales order emails. It works seamlessly with the standard Odoo 
-          mail composer.
-      </p>
+      <h1>Auto-Attach Product Documents to Sales Emails</h1>
+      <p style="text-align: center; font-size: 18px; color: #7f8c8d;">Never forget to send product documents again!</p>
+      
+      <div class="problem-box">
+        <h4>❌ The Problem:</h4>
+        <p>Manually attaching product catalogs, specifications, and documents to every sales email is time-consuming and error-prone. Sales teams often forget important files, resulting in incomplete customer information and follow-up requests.</p>
+      </div>
+
+      <div class="solution-box">
+        <h4>✅ The Solution:</h4>
+        <p><strong>This module automatically attaches ALL product-related documents</strong> when sending quotation emails. Save time, ensure completeness, and provide professional customer experience every time.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Features -->
+  <!-- Key Benefits -->
   <section class="oe_container oe_dark">
       <div class="oe_row oe_spaced">
-          <h2 class="oe_slogan">Key Features</h2>
-          <ul>
-              <li>📎 Automatically detects products in the quotation/sales order</li>
-              <li>📂 Attaches all related product documents</li>
-              <li>✅ Avoids duplicate attachments</li>
-              <li>💡 Works out-of-the-box with Odoo's standard mail composer</li>
-              <li>⚡ Saves time and ensures customers receive complete documentation</li>
-          </ul>
-      </div>
-  </section>
-
-  <!-- How it Works -->
-  <section class="oe_container">
-      <div class="oe_row oe_spaced">
-          <h2 class="oe_slogan">How It Works</h2>
-          <div class="oe_span12">
-              <h4>1. Configure Product Documents</h4>
-              <p>Attach documents (PDFs, images, catalogs) to products in Odoo.</p>
-              <img src="screenshot_1_product_attachment.png" class="oe_screenshot" alt="Attach documents to products"/>
-
-              <h4>2. Create a Quotation</h4>
-              <p>Add products that have documents attached.</p>
-              <img src="screenshot_2_quotation.png" class="oe_screenshot" alt="Quotation with products"/>
-
-              <h4>3. Send Quotation by Email</h4>
-              <p>Open the mail composer from the quotation and the module 
-                 automatically adds all product-related documents.</p>
-              <img src="screenshot_3_mail_composer.png" class="oe_screenshot" alt="Mail composer with auto-attached documents"/>
-
-              <h4>4. Customer Receives Complete Documentation</h4>
-              <p>The customer gets the quotation with all relevant product files attached — no extra steps required.</p>
-              <img src="screenshot_4_customer_email.png" class="oe_screenshot" alt="Customer email with attachments"/>
+          <h2 class="oe_slogan" style="text-align: center;">Key Benefits</h2>
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+            
+              <div><strong>Save 5-10 minutes per quotation</strong> - No more manual file hunting</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+              <div><strong>100% Complete Documentation</strong> - Never forget product files again</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+              <div><strong>Better Customer Experience</strong> - Customers get everything they need</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+              <div><strong>Zero Configuration</strong> - Works immediately after installation</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+              <div><strong>No Duplicates</strong> - Smart detection avoids duplicate attachments</div>
           </div>
       </div>
   </section>
 
-  <!-- Why Choose -->
-  <section class="oe_container oe_dark">
+  <!-- Screenshots - Before/After -->
+  <section class="oe_container">
       <div class="oe_row oe_spaced">
-          <h2 class="oe_slogan">Why Choose This Module?</h2>
-          <p>
-              ✔ Reduce mistakes (no forgotten attachments)<br/>
-              ✔ Save time for your sales team<br/>
-              ✔ Improve customer experience with complete and professional emails
-          </p>
+          <h2 class="oe_slogan" style="text-align: center;">📸 See The Difference</h2>
+          
+          <!-- BEFORE -->
+          <div style="background: #fff; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
+              <h3 style="color: #dc3545; margin-top: 0;">❌ BEFORE (without module)</h3>
+              <p><strong>Manual Process:</strong> Sales rep must search for and manually attach product documents. Time-consuming and prone to errors!</p>
+              <img src="screenshot_before.png" alt="Before: Only quotation PDF" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+              <p style="font-style: italic; color: #666;">Only the quotation PDF is attached. Product catalogs and specifications are missing.</p>
+          </div>
+
+          <!-- AFTER -->
+          <div style="background: #fff; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #28a745;">
+              <h3 style="color: #28a745; margin-top: 0;">✅ AFTER (with module)</h3>
+              <p><strong>Automatic Magic:</strong> All product documents attached instantly! Complete customer documentation every time.</p>
+              <img src="screenshot_after.png" alt="After: All documents attached" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+              <p style="font-style: italic; color: #666;">Quotation PDF + ALL product catalogs, specifications, and documents automatically attached!</p>
+          </div>
+
       </div>
   </section>
 
-  <!-- Get Started -->
-  <section class="oe_container">
+  <!-- How it Works -->
+  <section class="oe_container oe_dark">
       <div class="oe_row oe_spaced">
-          <h2 class="oe_slogan">Get Started in Minutes</h2>
-          <p>
-              Simply install the module — no configuration required.
-          </p>
-          <p>
-              <strong>Dependencies:</strong> Sales, Mail
-          </p>
+          <h2 class="oe_slogan" style="text-align: center;">📋 How It Works (3 Simple Steps)</h2>
+          
+          <div class="workflow-step">
+              <div style="display: flex; align-items: center;">
+                  <span class="step-number">1</span>
+                  <div>
+                      <h4>Attach Documents to Products</h4>
+                      <p>Add catalogs, specifications, images to your product templates. You probably already have these files!</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="workflow-step">
+              <div style="display: flex; align-items: center;">
+                  <span class="step-number">2</span>
+                  <div>
+                      <h4>Create Quotations Normally</h4>
+                      <p>Create your sales quotations with products that have attached documents. No changes to your workflow!</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="workflow-step">
+              <div style="display: flex; align-items: center;">
+                  <span class="step-number">3</span>
+                  <div>
+                      <h4>Send by Email - Magic Happens! 🪄</h4>
+                      <p>Click "Send by Email" and all product documents are automatically attached. Your customer receives everything!</p>
+                  </div>
+              </div>
+          </div>
       </div>
   </section>
+
+  <!-- Perfect For Industries -->
+  <section class="oe_container">
+      <div class="oe_row oe_spaced">
+          <h2 class="oe_slogan" style="text-align: center;">Perfect For These Industries</h2>
+          <div class="industry-grid">
+              <div class="industry-card">
+                  <h4>🔧 Manufacturing</h4>
+                  <p>Technical specifications, safety sheets, compliance certificates automatically attached.</p>
+              </div>
+              <div class="industry-card">
+                  <h4>💼 B2B Commerce</h4>
+                  <p>Product catalogs, price lists, warranty documentation sent automatically.</p>
+              </div>
+              <div class="industry-card">
+                  <h4>⚙️ Equipment Sales</h4>
+                  <p>User manuals, parts catalogs, service guides included every time.</p>
+              </div>
+              <div class="industry-card">
+                  <h4>🏗️ Construction</h4>
+                  <p>Safety data sheets, installation guides, material certificates attached.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <section class="oe_container">
+    <div class="oe_row oe_spaced" style="text-align: center; margin-top: 40px;">
+      <h3>Ready to try it?</h3>
+      <p>Install this free module today and let Odoo automatically attach product documents to your sales emails.</p>
+      <p><em>No configuration needed — works immediately after installation.</em></p>
+    </div>
+  </section>
+  
+  
+
+ 
+ 
+
 
 </body>
 </html>
