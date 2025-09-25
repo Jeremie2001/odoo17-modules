@@ -11,7 +11,7 @@
         .problem-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; }
         .solution-box { background: #d1edff; border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; }
         .workflow-step { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin: 10px 0; }
-        .benefit-item { display: flex; align-items: center; margin: 10px 0; }
+        .benefit-item { display: flex !important; align-items: center !important; margin: 10px 0; }
         .benefit-icon {  color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 5px; font-weight: bold; }
         .cta-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; text-align: center; margin: 30px 0; }
         .step-number { background: #007bff; color: white; width: 35px; height: 35px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; }
@@ -31,7 +31,7 @@
   <!-- Intro with Problem/Solution -->
   <section class="oe_container">
     <div class="oe_row oe_spaced">
-      <h1>Auto-Attach Product Documents to Sales Emails</h1>
+      <h2 style="white-space: nowrap !important;">Auto-Attach Product Documents to Sales Emails</h2>
       <p style="text-align: center; font-size: 18px; color: #7f8c8d;">Never forget to send product documents again!</p>
       
       <div class="problem-box">
@@ -51,25 +51,24 @@
       <div class="oe_row oe_spaced">
           <h2 class="oe_slogan" style="text-align: center;">Key Benefits</h2>
           <div class="benefit-item">
-            <div class="benefit-icon">✅</div>
+           
+               <div> <span>✅ </span><strong>Save 5-10 minutes per quotation</strong> - No more manual file hunting</div>
+          </div>
+          <div class="benefit-item">
             
-              <div><strong>Save 5-10 minutes per quotation</strong> - No more manual file hunting</div>
+              <div><span>✅ </span><strong>100% Complete Documentation</strong> - Never forget product files again</div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">✅</div>
-              <div><strong>100% Complete Documentation</strong> - Never forget product files again</div>
+            
+              <div><span>✅ </span><strong>Better Customer Experience</strong> - Customers get everything they need</div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">✅</div>
-              <div><strong>Better Customer Experience</strong> - Customers get everything they need</div>
+            
+              <div><span>✅ </span><strong>Zero Configuration</strong> - Works immediately after installation</div>
           </div>
           <div class="benefit-item">
-            <div class="benefit-icon">✅</div>
-              <div><strong>Zero Configuration</strong> - Works immediately after installation</div>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-icon">✅</div>
-              <div><strong>No Duplicates</strong> - Smart detection avoids duplicate attachments</div>
+            
+              <div><span>✅ </span><strong>No Duplicates</strong> - Smart detection avoids duplicate attachments</div>
           </div>
       </div>
   </section>
@@ -83,7 +82,7 @@
           <div style="background: #fff; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #dc3545;">
               <h3 style="color: #dc3545; margin-top: 0;">❌ BEFORE (without module)</h3>
               <p><strong>Manual Process:</strong> Sales rep must search for and manually attach product documents. Time-consuming and prone to errors!</p>
-              <img src="screenshot_before.png" alt="Before: Only quotation PDF" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+              <img src="screenshot_before.png" alt="Before: Only quotation PDF" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; height: 100%;" />
               <p style="font-style: italic; color: #666;">Only the quotation PDF is attached. Product catalogs and specifications are missing.</p>
           </div>
 
@@ -91,7 +90,7 @@
           <div style="background: #fff; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #28a745;">
               <h3 style="color: #28a745; margin-top: 0;">✅ AFTER (with module)</h3>
               <p><strong>Automatic Magic:</strong> All product documents attached instantly! Complete customer documentation every time.</p>
-              <img src="screenshot_after.png" alt="After: All documents attached" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+              <img src="screenshot_after.png" alt="After: All documents attached" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; height: 100%;"/>
               <p style="font-style: italic; color: #666;">Quotation PDF + ALL product catalogs, specifications, and documents automatically attached!</p>
           </div>
 
@@ -169,10 +168,7 @@
     </div>
   </section>
   
-  
 
- 
- 
 
 
 </body>
