@@ -35,7 +35,6 @@ class project_quotation_link(models.Model):
     
 
     def _compute_sale_orders(self):
-        
         # Optimisation: une seule requête pour tous les projets
         if not self:
             return
