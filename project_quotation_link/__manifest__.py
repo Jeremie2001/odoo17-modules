@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Project - Quotation Link',
-    'version': '17.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': 'Link sales quotations to specific projects',
     'description': """
 This module allows you to associate sales quotations with a specific project.
@@ -30,7 +30,7 @@ Ideal for companies managing several projects for the same client.
         'static/description/icon.png',
         'static/description/01_creation_projet.png',
         'static/description/02_projet_avec_devis.png',
-        'static/description/03_vue_kanban.png',
+        'static/description/04_vue_kanban.png',
         'static/description/04_devis_avec_projet.png',
     ],
 
