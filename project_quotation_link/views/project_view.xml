@@ -87,6 +87,30 @@
     </field>
 </record>
 
+<record id="project_kanban_inherit_buttons" model="ir.ui.view">
+    <field name="name">project.project.kanban.inherit.buttons</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project_kanban"/>
+    <field name="arch" type="xml">
+
+        <!-- Cibler le bon conteneur du menu dans Odoo 18 -->
+        <xpath expr="//t[@t-name='menu']//div[@class='col-6' and contains(@groups, 'project.group_project_manager')]/a[@type='open']" position="after">
+            
+            <a type="object" name="action_view_sale_orders" class="dropdown-item" role="menuitem">
+                <span class="fa fa-file-text-o me-1"/> Voir devis
+            </a>
+
+            <a type="object" name="action_create_quotation" class="dropdown-item" role="menuitem">
+                <span class="fa fa-plus-square me-1"/> Créer devis
+            </a>
+            
+
+        </xpath>
+
+    </field>
+</record>
+
+
 
 
 

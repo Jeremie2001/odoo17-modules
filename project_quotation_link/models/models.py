@@ -58,3 +58,35 @@ class project_quotation_link(models.Model):
             })
 
 
+
+    def action_view_sale_orders(self):
+        """Bouton smart pour voir les devis du projet"""
+        self.ensure_one()
+        
+        # Utiliser l'action standard de sale
+        action = self.env.ref('sale.action_quotations').read()[0]
+        
+        # Appliquer le domaine et le contexte
+        action['domain'] = [('projet', '=', self.id)]
+        action['context'] = {
+            'default_projet': self.id,
+            'search_default_projet': self.id,
+        }
+        
+        return action
+    
+    def action_create_quotation(self):
+        """Créer un nouveau devis lié au projet"""
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Nouveau devis',
+            'res_model': 'sale.order',
+            'view_mode': 'form',
+            'context': {
+                'default_projet': self.id,
+                'default_partner_id': self.entreprise.id,
+            },
+            'target': 'current',
+        }
+

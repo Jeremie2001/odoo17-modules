@@ -39,8 +39,8 @@ msgstr "Number of quotes"
 
 #. module: project_quotation_link
 #: model:ir.model,name:project_quotation_link.model_project_project
-msgid "Project"
-msgstr ""
+msgid "Projet"
+msgstr "Project"
 
 #. module: project_quotation_link
 #: model:ir.model.fields,field_description:project_quotation_link.field_sale_order__projet
@@ -83,3 +83,15 @@ msgstr "associated quote"
 #: model_terms:ir.ui.view,arch_db:project_quotation_link.project_view_kanban_inherit
 msgid "devis associés"
 msgstr "associated quotes"
+
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_kanban_inherit_buttons
+msgid "Voir devis"
+msgstr "See quotation"
+
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_kanban_inherit_buttons
+msgid "Créer devis"
+msgstr "create a quotation"
