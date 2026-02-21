@@ -58,3 +58,38 @@ class project_quotation_link(models.Model):
             })
 
 
+
+    @api.onchange('entreprise')
+    def _onchange_entreprise(self):
+        """Synchroniser l'entreprise avec partner_id"""
+        if self.entreprise:
+            self.partner_id = self.entreprise
+            self.responsable = False
+
+    # Actions (inchangées)
+    def action_view_sale_orders(self):
+        """Bouton smart pour voir les devis du projet"""
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Devis du projet',
+            'res_model': 'sale.order',
+            'view_mode': 'tree,form',
+            'domain': [('projet', '=', self.id)],
+            'context': {'default_projet': self.id}
+        }
+
+    def action_create_quotation(self):
+        """Créer un nouveau devis lié au projet"""
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Nouveau devis',
+            'res_model': 'sale.order',
+            'view_mode': 'form',
+            'context': {
+                'default_projet': self.id,
+                'default_partner_id': self.entreprise.id if self.entreprise else False,
+            },
+            'target': 'current',
+        }
