@@ -11,7 +11,7 @@
     <field name="inherit_id" ref="project.view_project_kanban"/>
     <field name="arch" type="xml">
         
-    <xpath expr="//t[@t-name='kanban-box']//div[hasclass('o_primary')]" position="after">
+        <xpath expr="//t[@t-name='kanban-box']//div[hasclass('o_primary')]" position="after">
 
 
         <div t-if="record.sale_order_count.value &gt; 0" class="text-muted small mt-1">
@@ -80,6 +80,25 @@
     </field>
 </record>
 
+
+
+
+
+
+<record id="project_kanban_inherit_buttons" model="ir.ui.view">
+    <field name="name">project.project.kanban.inherit.buttons</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project_kanban"/>
+    <field name="arch" type="xml">
+
+        <!-- Ajouter après le lien "Settings" (Paramètres) -->
+        <xpath expr="//div[@class='o_kanban_card_manage_settings row']/div[@role='menuitem' and @class='col-6' and @groups='project.group_project_manager']/a[@type='edit']" position="after">
+            <a class="dropdown-item" role="menuitem" type="object" name="action_view_sale_orders">Voir devis</a>
+            <a class="dropdown-item" role="menuitem" type="object" name="action_create_quotation">Créer devis</a>
+        </xpath>
+
+    </field>
+</record>
 
 
 
