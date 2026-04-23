@@ -44,4 +44,6 @@ Compatible with Odoo 17 Community and Enterprise.
     'installable': True,
     'application': False,
     'license': 'LGPL-3',
+    'price': 0.00,
+    'currency': 'USD',
 }
