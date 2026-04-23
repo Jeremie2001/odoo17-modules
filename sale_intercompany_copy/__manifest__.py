@@ -13,7 +13,13 @@
     
     'images': [
         'static/description/icon.png',
+        'static/description/34.png',
+        'static/description/36.png',
+        'static/description/38.png',
+        'static/description/40.png',
+        'static/description/41.png',
     ],
+    
     'installable': True,
     'application': False,
     'license': 'LGPL-3',
