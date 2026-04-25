@@ -1,6 +1,6 @@
 {
     'name': 'Sale Order — Copy to Another Company',
-    'version': '17.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Sales/Sales',
     'summary': 'Copy sale orders from one company to another in one click',
     'description': """

@@ -51,6 +51,13 @@ class SaleCopyWizard(models.TransientModel):
 
         copied_orders = []
 
+        # Détecter les noms de champs selon la version Odoo
+        # v19+ utilise product_uom_id et tax_ids
+        # v16/17/18 utilise product_uom et tax_id
+        SaleOrderLine = self.env['sale.order.line']
+        uom_field_name = 'product_uom_id' if 'product_uom_id' in SaleOrderLine._fields else 'product_uom'
+        tax_field_name = 'tax_ids' if 'tax_ids' in SaleOrderLine._fields else 'tax_id'
+
         for source in self.sale_order_ids:
             partner = source.partner_id
 
@@ -115,17 +122,22 @@ class SaleCopyWizard(models.TransientModel):
                 if hasattr(line, 'purchase_price'):
                     line_vals['purchase_price'] = line.purchase_price
 
-                if line.product_uom:
-                    line_vals['product_uom'] = line.product_uom.id
+                # Compatibilité v16/17/18 (product_uom) et v19+ (product_uom_id)
+                uom = getattr(line, uom_field_name, None)
+                if uom:
+                    line_vals[uom_field_name] = uom.id
 
                 new_line = self.env['sale.order.line'].sudo().with_company(target_company).create(line_vals)
 
                 if line.product_id:
                     product_target = line.product_id.with_company(target_company)
-                    taxes = product_target.taxes_id.filtered(
-                        lambda t: t.company_id == target_company
-                    )
-                    new_line.sudo().write({'tax_id': [(6, 0, taxes.ids)]})
+                    # Compatibilité v16/17/18 (taxes_id) et v19+ (tax_ids sur product)
+                    product_taxes = getattr(product_target, 'taxes_id', None) or getattr(product_target, 'tax_ids', None)
+                    if product_taxes:
+                        taxes = product_taxes.filtered(
+                            lambda t: t.company_id == target_company
+                        )
+                        new_line.sudo().write({tax_field_name: [(6, 0, taxes.ids)]})
 
             # Recalcul des marges si le module sale_margin est installé
             for line in new_order.order_line:
