@@ -27,8 +27,8 @@ Ideal for companies managing several projects for the same client.
     
 
     'images': [
-        'static/description/icon.png',
         'static/description/banner.png',
+        'static/description/icon.png',
         'static/description/01_creation_projet.png',
         'static/description/02_projet_avec_devis.png',
         'static/description/03_vue_kanban.png',
