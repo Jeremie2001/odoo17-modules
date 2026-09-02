@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="project_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+
+            <!-- Après le titre du projet -->
+            <xpath expr="//t[@t-name='card']//span[hasclass('text-truncate','fs-4','fw-bold')]" position="after">
+                
+                <div t-if="record.sale_order_count.value &gt; 0" class="text-muted small mt-1">
+                    <i class="fa fa-file-text-o me-2"/> 
+                    <field name="sale_order_count"/> 
+                    <t t-if="record.sale_order_count.value == 1"> devis associé</t>
+                    <t t-if="record.sale_order_count.value &gt; 1"> devis associés</t>
+                </div>
+
+            </xpath>
+
+            <!-- À l'intérieur de o_project_kanban_body (qui est dans <main class="o_project_kanban_main">) -->
+            <xpath expr="//t[@t-name='card']//div[hasclass('o_project_kanban_body')]" position="inside">
+
+                <div t-if="record.entreprise.value" class="text-muted d-flex align-items-baseline mt-1">
+                    <span class="fa fa-building-o me-2"/>
+                    <field name="entreprise" widget="res_partner_many2one" class="text-truncate"/>
+                </div>
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="project_project_view_form_inherit" model="ir.ui.view">
+        <field name="name">project.project.view.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+
+                <div class="mt-2">
+                    <label for="description_projet" string="Description du projet" style="margin-right:15px !important;"/>
+                    <span class="oe_edit_only o_row">
+                        <field name="description_projet" class="mt-1 fs-6" placeholder="description du projet"/>
+                    </span>
+                </div>
+                
+                <div class="mt-2">
+                    <label for="entreprise" string="Entreprise" style="margin-right:15px !important;"/>
+                    <span class="oe_edit_only o_row">
+                        <field name="entreprise" class="mt-1 fs-6" placeholder="choisir l'entreprise"/>
+                    </span>
+                </div>
+
+                <div class="mt-2">
+                    <label for="responsable" string="Responsable" style="margin-right:15px !important;"/>
+                    <span class="oe_edit_only o_row">
+                        <field name="responsable" class="mt-1 fs-6" placeholder="choisir le responsable"/>
+                    </span>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="project_kanban_inherit_buttons" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherit.buttons</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[@name='card_menu_view']" position="inside">
+                <div role="menuitem" groups="project.group_project_manager">
+                    <a type="object" name="action_view_sale_orders">
+                        <span class="fa fa-file-text-o me-1"/> Voir devis
+                    </a>
+                </div>
+                <div role="menuitem" groups="project.group_project_manager">
+                    <a type="object" name="action_create_quotation">
+                        <span class="fa fa-plus-square me-1"/> Créer devis
+                    </a>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+
+  </data>
+</odoo>

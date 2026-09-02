@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_quotation_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-08 19:09+0000\n"
+"PO-Revision-Date: 2025-10-08 19:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_quotation_link
+#: model:ir.model.fields,field_description:project_quotation_link.field_project_project__description_projet
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_project_view_form_inherit
+msgid "Description du projet"
+msgstr "project description"
+
+#. module: project_quotation_link
+#: model:ir.model.fields,field_description:project_quotation_link.field_project_project__sale_order_ids
+msgid "Devis associés"
+msgstr "associated quotes"
+
+#. module: project_quotation_link
+#: model:ir.model.fields,field_description:project_quotation_link.field_project_project__entreprise
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_project_view_form_inherit
+msgid "Entreprise"
+msgstr "Enterprise"
+
+#. module: project_quotation_link
+#: model:ir.model.fields,field_description:project_quotation_link.field_project_project__sale_order_count
+msgid "Nombre de devis"
+msgstr "Number of quotes"
+
+#. module: project_quotation_link
+#: model:ir.model,name:project_quotation_link.model_project_project
+msgid "Projet"
+msgstr "Project"
+
+#. module: project_quotation_link
+#: model:ir.model.fields,field_description:project_quotation_link.field_sale_order__projet
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.view_sales_order_filter_inherit_project
+msgid "Projet"
+msgstr "Project"
+
+#. module: project_quotation_link
+#: model:ir.model.fields,field_description:project_quotation_link.field_project_project__responsable
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_project_view_form_inherit
+msgid "Responsable"
+msgstr "Manager"
+
+#. module: project_quotation_link
+#: model:ir.model,name:project_quotation_link.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_project_view_form_inherit
+msgid "choisir l'entreprise"
+msgstr "choose the company"
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_project_view_form_inherit
+msgid "choisir le responsable"
+msgstr "select the manager"
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_project_view_form_inherit
+msgid "description du projet"
+msgstr "project description"
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_view_kanban_inherit
+msgid "devis associé"
+msgstr "associated quote"
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_view_kanban_inherit
+msgid "devis associés"
+msgstr "associated quotes"
+
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_kanban_inherit_buttons
+msgid "Voir devis"
+msgstr "See quotation"
+
+
+#. module: project_quotation_link
+#: model_terms:ir.ui.view,arch_db:project_quotation_link.project_kanban_inherit_buttons
+msgid "Créer devis"
+msgstr "create a quotation"
