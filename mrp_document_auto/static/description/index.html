@@ -4,120 +4,295 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRP - Auto Copy Documents</title>
+    <style>
+        * { box-sizing: border-box; }
+        .feature-card-anim:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+            border-color: #f59e0b !important;
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .hero-inner { padding: 50px 15px !important; margin: 10px !important; }
+            .hero-title { font-size: 28px !important; }
+            .hero-subtitle { font-size: 16px !important; }
+            .hero-badges { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
+            .hero-badge { font-size: 12px !important; padding: 6px 12px !important; margin: 0 !important; }
+            .contact-section { padding: 50px 15px !important; margin: 10px !important; }
+            .contact-title { font-size: 2em !important; }
+            .contact-cta a { padding: 15px 25px !important; font-size: 1em !important; word-break: break-all; }
+        }
+    </style>
 </head>
 <body>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; padding-bottom: 50px;">
 
-    <!-- Title -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan">📂 MRP - Auto Copy Documents</h2>
-        <h3 class="oe_slogan">Automatically copy documents from components to the finished product</h3>
-        <p>
-          This module improves document management in the <b>MRP (Bill of Materials / BoM)</b> module.  
-          It automatically copies attachments linked to components (products or variants) to the associated finished product.  
-          No more need to manage documents manually!
-        </p>
-      </div>
-  </section>
-      
-    <!-- Features -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2>Features</h2>
-        <ul>
-          <li>Automatic copying of component documents to the final product</li>
-          <li>Avoids duplicates (control by name + checksum)</li>
-          <li>Automatic update when components change</li>
-          <li>Marking deleted documents as <b>[OBSOLETE]</b></li>
-          <li>Two-way synchronization with products</li>
-        </ul>
-      </div>
-  </section>
-      
-    <!-- Use cases -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2>Use cases</h2>
-        <ul>
-          <li>Technical drawings (PDF, images, DXF)</li>
-          <li>Technical data sheets and certificates</li>
-          <li>Centralized production documentation</li>
-        </ul>
-      </div>
-  </section>
-      
-    <!-- Illustrated example -->
-    <section class="oe_container">
-      <h2>📸 Example of use</h2>
-      <p><b>1. Before copying</b>: the component has documents, but the finished product has nothing.</p>
-      <div class="oe_demo oe_screenshot">
-        <img src="component_with_doc.png" alt="Documents on the component"/>
-      </div>
-      <div class="oe_demo oe_screenshot">
-        <img src="finished_product_without_doc.png" alt="Finished product without documents"/>
-      </div>
+    <!-- HERO -->
+    <div class="hero-inner" style="background-image: linear-gradient(to bottom right, #78350f, #92400e, #b45309) !important; color: #ffffff !important; padding: 80px 20px; text-align: center; border-radius: 16px; position: relative; overflow: hidden; margin: 20px;">
+        <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 5;">
+            <div style="display: inline-block; padding: 6px 18px; background: rgba(251,191,36,0.3); border: 1px solid rgba(251,191,36,0.6); border-radius: 25px; margin-bottom: 25px; font-size: 13px; color: #fde68a !important; font-weight: 600; letter-spacing: 0.05em;">
+                ✦ Odoo 18 · Manufacturing Module · FREE
+            </div>
+            <h1 class="hero-title" style="font-size: 48px; margin-bottom: 20px; font-weight: 800; color: #ffffff !important; line-height: 1.15;">MRP — Auto Copy Documents</h1>
+            <p class="hero-subtitle" style="font-size: 20px; opacity: 0.9; color: #fde68a !important; max-width: 680px; margin: 0 auto 30px auto;">
+                Stop copying documents manually from components to finished products. This module does it automatically — every time, without errors.
+            </p>
+            <div class="hero-badges" style="margin-top: 20px;">
+                <span class="hero-badge" style="display: inline-block; padding: 8px 18px; background: rgba(251,191,36,0.2); border-radius: 25px; margin: 5px; font-size: 14px; color: #ffffff !important; border: 1px solid rgba(251,191,36,0.4);">📂 Auto Copy</span>
+                <span class="hero-badge" style="display: inline-block; padding: 8px 18px; background: rgba(251,191,36,0.2); border-radius: 25px; margin: 5px; font-size: 14px; color: #ffffff !important; border: 1px solid rgba(251,191,36,0.4);">🔄 Auto Update</span>
+                <span class="hero-badge" style="display: inline-block; padding: 8px 18px; background: rgba(251,191,36,0.2); border-radius: 25px; margin: 5px; font-size: 14px; color: #ffffff !important; border: 1px solid rgba(251,191,36,0.4);">⚠️ Obsolete marking</span>
+                <span class="hero-badge" style="display: inline-block; padding: 8px 18px; background: rgba(251,191,36,0.2); border-radius: 25px; margin: 5px; font-size: 14px; color: #ffffff !important; border: 1px solid rgba(251,191,36,0.4);">✅ No duplicates</span>
+            </div>
+        </div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.04; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+    </div>
 
-      <p><b>2.</b> Create the bill of materials: select the finished product and its components. </p>
-      <div class="oe_demo oe_screenshot">
-        <img src="add_manufacturing.png" alt="Creating BoM"/>
-      </div>
-    
-      <p><b>3. After copying</b>: the finished product automatically retrieves the component's documents. </p>
-      <div class="oe_demo oe_screenshot">
-        <img src="finished_prod_with_doc.png" alt="Finished product with copied documents"/>
-      </div>
-    
-      <p><b>4. Deletion</b>: a document deleted from the component is marked <b>[OBSOLETE]</b> in the finished product.</p>
-      <div class="oe_demo oe_screenshot">
-        <img src="obsolete_component.png" alt="Document marked OBSOLETE"/>
-      </div>
-  </section>
-      
-    <!-- Advantages -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2>✅ Advantages</h2>
-        <ul>
-          <li>Time savings: no more need to copy documents manually</li>
-          <li>Fewer errors: documents always up to date and in the right place</li>
-          <li>Complete transparency and traceability</li>
-        </ul>
-      </div>
-  </section>
+    <div style="margin: 0; padding: 0; color: #1e293b; background-color: #ffffff;">
 
-    <!-- Compatibility -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2>⚙️ Compatibility</h2>
-        <ul>
-          <li>Odoo 17 ✅</li>
-          <li>Odoo 18 ✅</li>
-          <li>Odoo 19 ✅</li>
-        </ul>
-      </div>
-  </section>
+        <!-- FEATURES -->
+        <section style="padding: 60px 0; background-color: #f8fafc !important;">
+            <div style="max-width: 1100px; margin: 0 auto; padding: 0 15px; text-align: center;">
+                <h2 style="font-size: 2.5em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700; border: none;">Key Features</h2>
+                <p style="font-size: 1.1em; color: #64748b !important; margin-bottom: 40px;">Everything you need for automatic document management in manufacturing</p>
+                <div style="text-align: center; font-size: 0;">
 
-    <!-- Installation -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2>Installation & Use</h2>
-        <p>
-          1. Install the module from <b>Apps</b>. <br/>
-          2. When creating or modifying a <b>Bill of Materials (BoM)</b>, documents related to components are automatically copied to the finished product. <br/>
-          3. If a document is deleted from a component, it is automatically marked <b>[OBSOLETE]</b> in the finished product.
-        </p>
-      </div>
-  </section>
+                    <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                        <div class="feature-card-anim" style="background: #ffffff !important; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; min-height: 230px; text-align: left;">
+                            <div style="font-size: 2.2em; margin-bottom: 15px;">📂</div>
+                            <h3 style="font-size: 1.2em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700;">Automatic Document Copy</h3>
+                            <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">When a Bill of Materials is created or updated, all documents attached to components are automatically copied to the finished product.</p>
+                        </div>
+                    </div>
 
-    <!-- Support -->
-    <section class="oe_container">
-      <div class="oe_row oe_spaced">
-        <h2>Support</h2>
-        <p>
-          For any questions or customization requests, please use the Odoo Apps Store messaging system.  
-        </p>
-      </div>
-  </section>
+                    <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                        <div class="feature-card-anim" style="background: #ffffff !important; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; min-height: 230px; text-align: left; box-shadow: 0 4px 12px rgba(245,158,11,0.1);">
+                            <div style="font-size: 2.2em; margin-bottom: 15px;">✅</div>
+                            <h3 style="font-size: 1.2em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700;">No Duplicates</h3>
+                            <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">Intelligent duplicate detection by filename and checksum — the same document is never copied twice, keeping your files clean.</p>
+                        </div>
+                    </div>
 
+                    <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                        <div class="feature-card-anim" style="background: #ffffff !important; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; min-height: 230px; text-align: left;">
+                            <div style="font-size: 2.2em; margin-bottom: 15px;">🔄</div>
+                            <h3 style="font-size: 1.2em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700;">Auto Update</h3>
+                            <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">When a component changes, the finished product documents are automatically updated. Always in sync, zero manual work.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                        <div class="feature-card-anim" style="background: #ffffff !important; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; min-height: 230px; text-align: left;">
+                            <div style="font-size: 2.2em; margin-bottom: 15px;">⚠️</div>
+                            <h3 style="font-size: 1.2em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700;">Obsolete Marking</h3>
+                            <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">When a document is deleted from a component, it is automatically marked [OBSOLETE] on the finished product — full traceability.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                        <div class="feature-card-anim" style="background: #ffffff !important; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; min-height: 230px; text-align: left;">
+                            <div style="font-size: 2.2em; margin-bottom: 15px;">↔️</div>
+                            <h3 style="font-size: 1.2em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700;">Two-way Sync</h3>
+                            <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">Bidirectional synchronization between components and finished products — changes propagate automatically in both directions.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                        <div class="feature-card-anim" style="background: #ffffff !important; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; min-height: 230px; text-align: left;">
+                            <div style="font-size: 2.2em; margin-bottom: 15px;">📄</div>
+                            <h3 style="font-size: 1.2em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700;">All File Types</h3>
+                            <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">Works with any file type — PDF, images, DXF, Excel, technical data sheets, certificates. Any attachment is supported.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SCREENSHOTS HEADER -->
+    <div style="text-align: center; padding: 60px 20px 20px;">
+        <h2 style="font-size: 2.5em; color: #1e293b !important; font-weight: 700;">📸 Screenshots</h2>
+        <p style="font-size: 1.1em; color: #64748b !important;">See the module in action on a real Odoo instance</p>
+    </div>
+
+    <!-- SCREENSHOT 1 -->
+    <section style="padding: 40px 20px; background-color: #ffffff;">
+        <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <div style="background: linear-gradient(135deg, #78350f, #92400e); width: 100%; padding: 30px; text-align: center;">
+                <img src="component_with_doc.png" style="width: 100%; display: block; border-radius: 8px;" alt="Component with documents">
+            </div>
+            <div style="padding: 30px; text-align: center;">
+                <h4 style="font-size: 1.5em; margin-bottom: 10px; color: #1e293b; font-weight: 700;">Component with Documents</h4>
+                <p style="color: #64748b; font-size: 16px; max-width: 600px; margin: 0 auto;">The component has attachments — technical drawings, data sheets, certificates. The module detects them automatically.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT 2 -->
+    <section style="padding: 40px 20px; background-color: #f8f9fa;">
+        <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <div style="background: linear-gradient(135deg, #92400e, #b45309); width: 100%; padding: 30px; text-align: center;">
+                <img src="add_manufacturing.png" style="width: 100%; display: block; border-radius: 8px;" alt="Creating Bill of Materials">
+            </div>
+            <div style="padding: 30px; text-align: center;">
+                <h4 style="font-size: 1.5em; margin-bottom: 10px; color: #1e293b; font-weight: 700;">Create your Bill of Materials</h4>
+                <p style="color: #64748b; font-size: 16px; max-width: 600px; margin: 0 auto;">Select the finished product and add your components. The module triggers automatically — no button to click, no action needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT 3 -->
+    <section style="padding: 40px 20px; background-color: #ffffff;">
+        <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <div style="background: linear-gradient(135deg, #b45309, #d97706); width: 100%; padding: 30px; text-align: center;">
+                <img src="finished_prod_with_doc.png" style="width: 100%; display: block; border-radius: 8px;" alt="Finished product with copied documents">
+            </div>
+            <div style="padding: 30px; text-align: center;">
+                <h4 style="font-size: 1.5em; margin-bottom: 10px; color: #1e293b; font-weight: 700;">Documents Copied Automatically</h4>
+                <p style="color: #64748b; font-size: 16px; max-width: 600px; margin: 0 auto;">The finished product now has all the documents from its components — automatically, instantly, without any manual action.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOT 4 -->
+    <section style="padding: 40px 20px; background-color: #f8f9fa;">
+        <div style="max-width: 900px; margin: 0 auto; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <div style="background: linear-gradient(135deg, #d97706, #78350f); width: 100%; padding: 30px; text-align: center;">
+                <img src="obsolete_component.png" style="width: 100%; display: block; border-radius: 8px;" alt="Obsolete document marking">
+            </div>
+            <div style="padding: 30px; text-align: center;">
+                <h4 style="font-size: 1.5em; margin-bottom: 10px; color: #1e293b; font-weight: 700;">Obsolete Document Tracking</h4>
+                <p style="color: #64748b; font-size: 16px; max-width: 600px; margin: 0 auto;">When a document is removed from a component, it is marked [OBSOLETE] on the finished product. Full traceability, zero information loss.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section style="padding: 60px 0; background-color: #f8fafc !important; text-align: center;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 15px;">
+            <h2 style="font-size: 2.5em; margin-bottom: 10px; color: #1e293b !important; font-weight: 700; border: none;">Who Is This For?</h2>
+            <p style="font-size: 1.1em; color: #64748b !important; margin-bottom: 40px;">Any manufacturer who uses Odoo MRP with product documents</p>
+            <div style="text-align: center; font-size: 0;">
+
+                <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="padding: 25px; background-color: #fffbeb !important; border-radius: 10px; border-left: 4px solid #f59e0b; text-align: left; min-height: 120px;">
+                        <h4 style="font-size: 1.1em; margin-bottom: 8px; color: #1e293b !important; font-weight: 700;">🏗️ Industrial Manufacturing</h4>
+                        <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">Technical drawings and certifications automatically propagated to finished products.</p>
+                    </div>
+                </div>
+
+                <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="padding: 25px; background-color: #fffbeb !important; border-radius: 10px; border-left: 4px solid #f59e0b; text-align: left; min-height: 120px;">
+                        <h4 style="font-size: 1.1em; margin-bottom: 8px; color: #1e293b !important; font-weight: 700;">🔧 Electronics</h4>
+                        <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">Component data sheets always available on the finished PCB or device.</p>
+                    </div>
+                </div>
+
+                <div style="display: inline-block; width: 100%; max-width: 320px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="padding: 25px; background-color: #fffbeb !important; border-radius: 10px; border-left: 4px solid #f59e0b; text-align: left; min-height: 120px;">
+                        <h4 style="font-size: 1.1em; margin-bottom: 8px; color: #1e293b !important; font-weight: 700;">🍃 Food & Agri</h4>
+                        <p style="color: #64748b !important; font-size: 13px; line-height: 1.5; margin: 0;">Ingredient certificates and traceability documents centralized on the final product.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ALSO FROM CRAKITECH -->
+    <section style="padding: 60px 0; background-color: #78350f !important; color: #ffffff !important; text-align: center; border-radius: 15px; margin: 20px 10px;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 15px;">
+            <h2 style="font-size: 2.5em; margin-bottom: 10px; color: #ffffff !important; font-weight: 700; border: none;">Also from Crakitech</h2>
+            <p style="font-size: 1.1em; color: #fde68a !important; margin-bottom: 40px;">Discover our other modules to optimize your Odoo workflow</p>
+            <div style="text-align: center; font-size: 0;">
+
+                <div style="display: inline-block; width: 100%; max-width: 480px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 15px; padding: 30px; text-align: left;">
+                        <div style="font-size: 2em; margin-bottom: 15px;">➕</div>
+                        <h3 style="font-size: 1.3em; margin-bottom: 10px; color: #ffffff !important; font-weight: 700;">Sale Order — Insert Line Anywhere</h3>
+                        <p style="color: #fde68a !important; font-size: 13px; line-height: 1.6; margin-bottom: 20px;">Insert a product, section or note exactly where you need it on any sale order — with one click on any row. No more scrolling to the bottom.</p>
+                        <a href="https://apps.odoo.com/apps/modules/browse?author=Jeremie%20Ndjoli" target="_blank"
+                           style="display: inline-block; padding: 10px 24px; background-color: #f59e0b !important; color: #ffffff !important; text-decoration: none; border-radius: 25px; font-weight: 700; font-size: 13px;">
+                            View on App Store →
+                        </a>
+                    </div>
+                </div>
+
+                <div style="display: inline-block; width: 100%; max-width: 480px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 15px; padding: 30px; text-align: left;">
+                        <div style="font-size: 2em; margin-bottom: 15px;">📊</div>
+                        <h3 style="font-size: 1.3em; margin-bottom: 10px; color: #ffffff !important; font-weight: 700;">Product Pricelists — Excel Export &amp; Import</h3>
+                        <p style="color: #fde68a !important; font-size: 13px; line-height: 1.6; margin-bottom: 20px;">Export all your products with every pricelist into one Excel file, edit prices like a spreadsheet, and reimport in one click.</p>
+                        <a href="https://apps.odoo.com/apps/modules/browse?author=Jeremie%20Ndjoli" target="_blank"
+                           style="display: inline-block; padding: 10px 24px; background-color: #f59e0b !important; color: #ffffff !important; text-decoration: none; border-radius: 25px; font-weight: 700; font-size: 13px;">
+                            View on App Store →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL -->
+    <section style="padding: 60px 0; background-color: #ffffff !important;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 15px; text-align: center;">
+            <h2 style="font-size: 2.5em; margin-bottom: 40px; color: #1e293b !important; font-weight: 700; border: none;">Technical Details</h2>
+            <div style="text-align: center; font-size: 0;">
+
+                <div style="display: inline-block; width: 100%; max-width: 480px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="background-color: #fffbeb !important; padding: 30px; border-radius: 10px; border-left: 5px solid #f59e0b; min-height: 200px; text-align: left;">
+                        <h3 style="font-size: 1.5em; margin-bottom: 20px; color: #1e293b !important; font-weight: 700;">Compatibility</h3>
+                        <div style="color: #64748b !important; font-size: 14px; line-height: 2;">
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> Odoo 17, 18 &amp; 19 — Community &amp; Enterprise<br>
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> Works with all BoM types<br>
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> All file types supported<br>
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> 100% Free — LGPL-3 license
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: inline-block; width: 100%; max-width: 480px; vertical-align: top; font-size: 16px; margin: 10px;">
+                    <div style="background-color: #fffbeb !important; padding: 30px; border-radius: 10px; border-left: 5px solid #f59e0b; min-height: 200px; text-align: left;">
+                        <h3 style="font-size: 1.5em; margin-bottom: 20px; color: #1e293b !important; font-weight: 700;">Technical</h3>
+                        <div style="color: #64748b !important; font-size: 14px; line-height: 2;">
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> Depends on mrp only<br>
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> Automatic trigger on BoM save<br>
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> Checksum-based duplicate detection<br>
+                            <span style="color: #f59e0b; font-weight: bold; margin-right: 10px;">✓</span> Zero configuration required
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" style="padding: 80px 20px; background-color: #78350f !important; color: #ffffff !important; text-align: center; border-radius: 15px; margin: 20px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 class="contact-title" style="font-size: 2.8em; margin-bottom: 20px; color: #ffffff !important; font-weight: 800; border: none;">📩 Contact &amp; Support</h2>
+            <p style="font-size: 1.3em; margin-bottom: 40px; color: #fde68a !important; line-height: 1.6;">
+                Have a question or need a customization? Contact us — we typically respond within 24 hours.
+            </p>
+            <div class="contact-cta">
+                <a href="mailto:crakitechpro@gmail.com"
+                   style="display: inline-block; padding: 18px 45px; background-color: #f59e0b !important; color: #ffffff !important; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 1.2em; box-shadow: 0 4px 20px rgba(245,158,11,0.45);">
+                    ✉️ crakitechpro@gmail.com
+                </a>
+            </div>
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div style="text-align: center; color: #fde68a !important; font-size: 0.95em;">
+                    ⚡ <strong style="color: #ffffff;">Fast Support</strong> — Response within 24 hours<br>
+                    🛠️ <strong style="color: #ffffff;">Custom Services</strong> available for your Odoo projects
+                </div>
+            </div>
+            <div style="margin-top: 30px; color: #fde68a !important; font-size: 0.85em;">
+                Made with care by <strong style="color: #ffffff;">Crakitech</strong> · Published on the Odoo Apps Store
+            </div>
+        </div>
+    </section>
+
+</div>
 </body>
 </html>
